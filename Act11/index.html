@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios de JavaScript NV</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background: #007bff;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            background: #fff;
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        button {
+            background: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        div {
+            margin-top: 10px;
+            padding: 10px;
+            background: #f1f1f1;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ejercicios de JavaScript NV</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Ejercicio 1: Saludo con sueldo</h2>
+            <button onclick="saludoConSueldo()">Ejecutar</button>
+            <div id="resultado1"></div>
+        </section>
+
+        <section>
+            <h2>Ejercicio 2: Perímetro de un cuadrado</h2>
+            <button onclick="perimetroCuadrado()">Ejecutar</button>
+            <div id="resultado2"></div>
+        </section>
+
+        <section>
+            <h2>Ejercicio 3: Suma y multiplicación</h2>
+            <button onclick="sumaMultiplicacion()">Ejecutar</button>
+            <div id="resultado3"></div>
+        </section>
+
+        <section>
+            <h2>Ejercicio 4: Promedio de notas</h2>
+            <button onclick="promedioNotas()">Ejecutar</button>
+            <div id="resultado4"></div>
+        </section>
+
+        <section>
+            <h2>Ejercicio 5: Clasificación de un número</h2>
+            <button onclick="clasificarNumero()">Ejecutar</button>
+            <div id="resultado5"></div>
+        </section>
+
+        <section>
+            <h2>Ejercicio 6: Traducción de palabras</h2>
+            <button onclick="traducirPalabra()">Ejecutar</button>
+            <div id="resultado6"></div>
+        </section>
+
+        <section>
+            <h2>Ejercicio 7: Serie con while</h2>
+            <button onclick="serieWhile()">Ejecutar</button>
+            <div id="resultado7"></div>
+        </section>
+
+        <section>
+            <h2>Ejercicio 8: Número menor</h2>
+            <button onclick="numeroMenor()">Ejecutar</button>
+            <div id="resultado8"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 </p>
+    </footer>
+
+    <script>
+        function saludoConSueldo() {
+            let nombre = prompt('Ingresa tu nombre:');
+            let sueldo = prompt('Ingresa tu sueldo:');
+            document.getElementById('resultado1').innerHTML = `Hola ${nombre}, tu sueldo es de ${sueldo}`;
+        }
+
+        function perimetroCuadrado() {
+            let lado = prompt('Ingresa el lado del cuadrado en cm:');
+            let perimetro = parseInt(lado) * 4;
+            document.getElementById('resultado2').innerHTML = `El perímetro del cuadrado es: ${perimetro} cm`;
+        }
+
+        function sumaMultiplicacion() {
+            let v1 = prompt('Ingresa el primer valor:');
+            let v2 = prompt('Ingresa el segundo valor:');
+            let v3 = prompt('Ingresa el tercer valor:');
+            let v4 = prompt('Ingresa el cuarto valor:');
+            let suma = parseInt(v1) + parseInt(v2) + parseInt(v3) + parseInt(v4);
+            let producto = parseInt(v1) * parseInt(v2) * parseInt(v3) * parseInt(v4);
+            document.getElementById('resultado3').innerHTML = `Suma: ${suma} <br> Producto: ${producto}`;
+        }
+
+        function promedioNotas() {
+            let nota1 = parseInt(prompt('Ingresa la primera nota:'));
+            let nota2 = parseInt(prompt('Ingresa la segunda nota:'));
+            let nota3 = parseInt(prompt('Ingresa la tercera nota:'));
+            let promedio = (nota1 + nota2 + nota3) / 3;
+            let mensaje = promedio >= 7 ? 'Promocionado' : 'No promocionado';
+            document.getElementById('resultado4').innerHTML = `Promedio: ${promedio.toFixed(2)} - ${mensaje}`;
+        }
+
+        function clasificarNumero() {
+            let num = parseInt(prompt('Ingresa un número:'));
+            let mensaje = num > 0 ? 'Positivo' : num < 0 ? 'Negativo' : 'Cero';
+            document.getElementById('resultado5').innerHTML = `El número es: ${mensaje}`;
+        }
+
+        function traducirPalabra() {
+            let palabra = prompt('Ingresa una palabra (casa, mesa, perro, gato):');
+            let traduccion;
+            switch (palabra) {
+                case 'casa':
+                    traduccion = 'house';
+                    break;
+                case 'mesa':
+                    traduccion = 'table';
+                    break;
+                case 'perro':
+                    traduccion = 'dog';
+                    break;
+                case 'gato':
+                    traduccion = 'cat';
+                    break;
+                default:
+                    traduccion = 'Palabra no reconocida';
+            }
+            document.getElementById('resultado6').innerHTML = `Traducción: ${traduccion}`;
+        }
+
+        function serieWhile() {
+            let valor = 11;
+            let contador = 0;
+            let resultado = '';
+            while (contador < 25) {
+                resultado += `Valor: ${contador}, múltiplo: ${valor}<br>`;
+                contador++;
+                valor += 11;
+            }
+            document.getElementById('resultado7').innerHTML = resultado;
+        }
+
+        function numeroMenor() {
+            let n1 = parseInt(prompt('Ingresa el primer número:'));
+            let n2 = parseInt(prompt('Ingresa el segundo número:'));
+            let n3 = parseInt(prompt('Ingresa el tercer número:'));
+            let menor = Math.min(n1, n2, n3);
+            document.getElementById('resultado8').innerHTML = `El número menor es: ${menor}`;
+        }
+    </script>
+</body>
+</html>
